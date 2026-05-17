@@ -5,16 +5,16 @@ const Register = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch('/api/register', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(form) });
+        fetch('/djangoapp/register', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(form) });
     };
 
     return (
         <form onSubmit={handleSubmit}>
-            <input placeholder="Username" onChange={e => setForm({...form, username: e.target.value})} />
-            <input placeholder="First Name" onChange={e => setForm({...form, first_name: e.target.value})} />
-            <input placeholder="Last Name" onChange={e => setForm({...form, last_name: e.target.value})} />
+            <input placeholder="Nom d'utilisateur" onChange={e => setForm({...form, username: e.target.value})} />
+            <input placeholder="Prénom" onChange={e => setForm({...form, first_name: e.target.value})} />
+            <input placeholder="Nom" onChange={e => setForm({...form, last_name: e.target.value})} />
             <input placeholder="Email" type="email" onChange={e => setForm({...form, email: e.target.value})} />
-            <input placeholder="Password" type="password" onChange={e => setForm({...form, password: e.target.value})} />
+            <input placeholder="Mot de passe" type="password" onChange={e => setForm({...form, password: e.target.value})} />
             <button type="submit">S'inscrire</button>
         </form>
     );
